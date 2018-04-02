@@ -11,12 +11,16 @@ var rect = {w: 100, h: 100};
 c.strokeRect((w/2) - rect.w/2, (h/2) - rect.h/2, rect.w, rect.h);
 
 var line = {w:2, h:100};
-var top_starting_path = (h/2)-50;
+var line_starting_point_x = (w/2-50);
+var line_starting_point_y = (h/2)-50;
 var bottom_starting_path = (h/2)+50;
+var mrandom = Math.random()*100;
 
-for (var i = 0; i < 10; i++) {
+for (var i = 0; i < 9; i++) {
   c.beginPath();
-  c.moveTo((w/2), top_starting_path);
-  c.lineTo((w/2), top_starting_path - line.h);
+  c.moveTo(line_starting_point_x, line_starting_point_y);
+  c.lineTo(line_starting_point_x, line_starting_point_y - (Math.random() *50 +50));
   c.stroke();
+  line_starting_point_x +=12.5;
+
 }
